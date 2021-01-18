@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-md5-file",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "A node-red node to calculate an MD5 hash for a give file.",
   "dependencies": {
     "md5-file": "^5.0.0"
