@@ -1,0 +1,47 @@
+<script type="text/javascript">
+    RED.nodes.registerType('md5.file', {
+        category: 'function',
+        color: '#a67bcf',
+        defaults: {
+            name: { value: "md5.file" },
+            filepath: { value: "" },
+            hashField: { value: "md5" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "hash.png",
+        label: function () {
+            return this.name || "md5.file";
+        },
+    });
+</script>
+
+<script type="text/x-red" data-template-name="md5.file">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div id="filepath" class="form-row">
+            <i class="fa fa-folder label-icon" aria-hidden="true"></i>
+            <label for="node-input-filepath" title="fsRootFolderstring">File path to calcualte hash</label>
+        
+            <label id="node-input-filepath-label" class="node-input-fsRootFolder button small" for="node-input-filepath"><i class="fa fa-folder-open-o" aria-hidden="true" style="padding-right:5px"></i>Select file</label>
+            <input type="text" id="node-input-filepath" placeholder="Local file path" style="margin-left:127px;">
+            <p id="node-input-filepath-info" style="margin-left:127px;">Please type the folder's path manually if the folder is empty.</p>
+            <input type="file" id="node-input-filepath" placeholder="Select file" style="display:none;">
+    </div>
+    <div class="form-row">
+        <label for="node-input-hashField"><i class="fa fa-edit"></i> Hash Property</label>
+        <input type="text" id="node-input-hashField" placeholder="Property to store hash" style="width:250px;">
+        <input type="hidden" id="node-input-hashFieldType">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="md5.file">
+    <p>Calculates the MD5 hash of a file and places the value in the specified property (<b>hashField</b>).</p>
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+      <dt>filepath<span class="property-type">string</span></dt>
+      <dt>hashField<span class="property-type">string</span></dt>
+    </dl>
+</script>
